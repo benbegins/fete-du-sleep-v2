@@ -1,0 +1,26 @@
+{
+  "name": "fete-du-sleep-v2",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "clean": "rm -rf dist/*",
+    "build:parcel": "parcel build src/js/main.js",
+    "dev": "parcel watch src/js/main.js",
+    "prod": "npm run clean && npm run build:parcel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.1"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.13",
+    "@swup/js-plugin": "^2.0.0",
+    "gsap": "^3.11.5",
+    "imagesloaded": "^5.0.0",
+    "splitting": "^1.0.6",
+    "swup": "^3.0.7"
+  }
+}

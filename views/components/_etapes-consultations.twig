@@ -1,0 +1,26 @@
+{% if etapes_consultations %}
+    <section class="etapes-consultations">
+        <div class="container">
+            <h2 class="etapes-consultations__title text-reveal" translate>
+                {% if etapes_consultations.slug == 'avec-suivi' %}
+                    {{ __('Comment se passe l’accompagnement ?', 'fetedusleep') }}              
+                {% else %}
+                    {{ __('Comment se passe la consultation ?', 'fetedusleep') }}    
+                {% endif %}          
+            </h2>
+            <ul class="etapes-consultations__list">
+                {% for etape in liste_etapes %}
+                <li class="etapes-consultations__item">
+                    <p class="chiffre">{{ loop.index }}</p>
+                    <h3 class="titre">{{etape.titre}}</h3>
+                    <p class="description text-reveal">{{etape.contenu}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="illu-veilleuse">
+            <img src="{{ function ('get_template_directory_uri' )}}/src/images/illu-veilleuse.png" alt="Illustration Veilleuse">
+        </div>
+    </section>
+{% endif %}

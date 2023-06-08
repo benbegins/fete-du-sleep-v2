@@ -1,0 +1,62 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-home">
+		<section class="hero">
+			<div class="container">
+				<h1 class="hero__title">
+					<p class="text-reveal" translate>{{ __('Bienvenue à <br>la Fête du Sleep !', 'fetedusleep') }}</p>
+					<div class="img-container parallax" data-speed="-15">
+						<img src="{{ function('get_template_directory_uri') }}/src/images/tetine.png" />
+					</div>
+				</h1>
+				<div class="hero__intro">
+					<p class="text-reveal">
+						{{ post.meta('intro') }}
+					</p>
+					{% set appeldecouverte_page = function('get_page_by_path', 'appel-de-decouverte') %}
+					{% if appeldecouverte_page %}
+						{% set appeldecouverte_post_id = function('pll_get_post', appeldecouverte_page.ID) %}
+						<a class="btn-primary green"
+							href="{{ function('get_the_permalink', appeldecouverte_post_id) }}">
+							{{ __('Appel gratuit de 15 min', 'fetedusleep') }}
+						</a>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<section class="thumbnail">
+			<div class="img-container">
+				<img src="{{ post.thumbnail.sizes['xl']['file'] }}"
+					alt="La fête du sleep - Sleep coach"
+					srcset="{{ post.thumbnail.srcset }}"
+					sizes="100vw"
+					class="parallax" 
+					data-speed="10" 
+					loading="lazy"
+					/>
+			</div>
+		</section>
+
+		<section class="presentation">
+			<div class="container">
+				<h2 class="presentation__accroche">
+					<div class="text-reveal">{{ post.meta('accroche') }}</div>
+				</h2>
+				<div class="presentation__content">
+					<div class="text-reveal">{{ post.meta('presentation') }}</div>
+					<div class="presentation__content__links">
+						{% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
+						{% if consultations_page %}
+							{% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
+							<a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	{% include 'components/_temoignages.twig' %}
+{% endblock %}

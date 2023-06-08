@@ -68,7 +68,15 @@ add_filter( 'excerpt_length', 'mytheme_custom_excerpt_length', 999 );
 
 // Remove Articles & Commentaires from admin bar
 function post_remove (){ 
-   remove_menu_page('edit.php');
+//    remove_menu_page('edit.php');
    remove_menu_page( 'edit-comments.php' );
 }
 add_action('admin_menu', 'post_remove'); 
+
+// Use options page for ACF
+add_filter( 'timber_context', 'mytheme_timber_context'  );
+
+function mytheme_timber_context( $context ) {
+    $context['options'] = get_fields('option');
+    return $context;
+}

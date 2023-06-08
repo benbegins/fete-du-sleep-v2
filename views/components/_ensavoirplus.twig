@@ -1,0 +1,16 @@
+<section class="ensavoirplus">
+    <div class="container">
+        <h2 class="ensavoirplus__title text-reveal" translate>
+            {{ __("Besoin d'en savoir plus ?", "fetedusleep") }}
+        </h2>
+        <p>{{ __('Je vous propose un appel de découverte gratuit de 15 minutes.', 'fetedusleep') }}</p>
+        {% set appeldecouverte_page = function('get_page_by_path', 'appel-de-decouverte') %}
+        {% if appeldecouverte_page %}
+            {% set appeldecouverte_post_id = function('pll_get_post', appeldecouverte_page.ID) %}
+            <a class="btn-primary green over-sable"
+                href="{{ function('get_the_permalink', appeldecouverte_post_id) }}">
+                {{ __('Appel gratuit de 15 min', 'fetedusleep') }}
+            </a>
+        {% endif %}
+    </div>
+</section>

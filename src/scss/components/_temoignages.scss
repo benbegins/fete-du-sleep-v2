@@ -1,0 +1,138 @@
+@use '../abstracts/variables';
+
+.temoignages {
+	--bg-width: 414px;
+	--bg-height: 395px;
+
+	background: var(--dark) url('/src/images/texture-temoignages.png') center
+		center repeat;
+	color: var(--light);
+	padding-block: var(--space-3xl);
+	background-size: calc(var(--bg-width) * 0.75) calc(var(--bg-height) * 0.75);
+	background-attachment: fixed;
+
+	@media (--lg-n-above) {
+		background-size: var(--bg-width) var(--bg-height);
+	}
+
+	&__title {
+		font-size: var(--fs-2xl);
+		font-weight: var(--txt-black);
+		font-family: var(--font-hobeaux);
+		color: var(--sable);
+
+		@media (--lg-n-above) {
+			text-align: center;
+		}
+	}
+
+	.slider {
+		&__item {
+			padding-block: var(--space-s);
+
+			@media (--lg-n-above) {
+				padding-block: var(--space-m);
+			}
+
+			&__inner {
+				padding-inline: var(--space-s);
+
+				@media (--sm-n-above) {
+					padding-inline: var(--space-m);
+				}
+
+				@media (--lg-n-above) {
+					padding-inline: 0;
+					width: 50%;
+					margin: 0 auto;
+				}
+			}
+
+			&__temoignage {
+				font-size: var(--fs-md);
+				font-weight: var(--txt-bold);
+			}
+
+			&__auteur {
+				position: relative;
+				padding-left: calc(var(--space-s) + 1.5rem);
+				margin-block: var(--space-xs);
+
+				&::before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 2rem;
+					height: 1px;
+					background: var(--light);
+				}
+			}
+		}
+
+		.swiper-pagination {
+			display: flex;
+			gap: 0.25rem;
+			padding-inline: var(--space-s);
+
+			@media (--sm-n-above) {
+				padding-inline: var(--space-m);
+			}
+
+			@media (--lg-n-above) {
+				justify-content: center;
+			}
+
+			&-bullet {
+				display: inline-block;
+				width: 1.5rem;
+				height: 5px;
+				background: var(--light);
+				opacity: 0.33;
+				border-radius: var(--rounded-full);
+
+				&-active {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.temoignages_light {
+	.temoignages {
+		background: #f5e9e6;
+		color: var(--dark);
+		padding-block: var(--space-l);
+
+		@media (--lg-n-above) {
+			padding-bottom: var(--space-xl);
+		}
+
+		.slider {
+			&__item {
+				&__auteur {
+					&::before {
+						background: var(--dark);
+					}
+				}
+			}
+			.swiper-pagination {
+				&-bullet {
+					background: var(--dark);
+				}
+			}
+		}
+	}
+
+	&.margin-top {
+		.temoignages {
+			padding-top: calc(var(--space-3xl) + 10vw);
+
+			@media (--md-n-above) {
+				padding-top: var(--space-l);
+			}
+		}
+	}
+}

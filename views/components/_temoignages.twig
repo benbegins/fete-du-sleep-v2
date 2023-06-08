@@ -1,0 +1,27 @@
+{% if temoignages %}
+	<section class="temoignages">
+		<div class="container">
+			<h2 class="temoignages__title text-reveal" translate>
+				{{ __('Témoignages', 'fetedusleep') }}
+			</h2>
+		</div>
+
+		<div class="slider swiper">
+			<div class="swiper-wrapper">
+				{% for temoignage in temoignages %}
+					<div class="slider__item swiper-slide">
+						<div class="slider__item__inner">
+							<p class="slider__item__temoignage">
+								{{ temoignage.meta('temoignage') }}
+							</p>
+							<p class="slider__item__auteur">
+								{{ temoignage.meta('auteur') }}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</section>
+{% endif %}

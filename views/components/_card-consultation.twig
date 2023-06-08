@@ -1,0 +1,21 @@
+<article class="card-consultation">
+    <header class="card-consultation__img-container">
+        <a href="{{consultation.link}}">
+            <img
+                src="{{ consultation.thumbnail.src }}"
+                alt="{{ type_consultation.title }}"
+                srcset="{{consultation.thumbnail.srcset}}"
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            >
+        </a>
+    </header>
+    <div class="card-consultation__content">
+        <div>
+            <h3 class="card-consultation__content__title">{{ consultation.title }}</h3>
+            <p class="card-consultation__content__description">{{consultation.meta('resume')}}</p>
+        </div>
+        <div>
+            <a class="card-consultation__content__btn" href="{{consultation.link}}">{{ __('En savoir plus', 'fetedusleep') }}</a>
+        </div>
+    </div>
+</article>

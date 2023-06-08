@@ -1,0 +1,81 @@
+@use '../abstracts/variables';
+
+.page-single-consultations {
+	.hero {
+		padding-bottom: var(--space-3xl);
+
+		.img-container {
+			width: 100%;
+			height: 50vw;
+			border-radius: var(--rounded);
+			overflow: hidden;
+
+			@media (--lg-n-above) {
+				height: 35vw;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.container {
+			@media (--lg-n-above) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: var(--space-m);
+				align-items: start;
+			}
+		}
+
+		.left {
+			@media (--lg-n-above) {
+				width: 90%;
+			}
+		}
+
+		.right {
+			margin-top: var(--space-l);
+
+			@media (--lg-n-above) {
+				margin-top: 0;
+			}
+
+			.prix {
+				font-size: var(--fs-lg);
+				margin-top: var(--space-xxs);
+			}
+
+			.presentation {
+				margin-top: var(--space-s);
+				padding-top: var(--space-s);
+				border-top: 1px solid var(--dark-transparent);
+
+				p {
+					margin-bottom: var(--space-xs);
+
+					&:last-child {
+						margin-bottom: var(--space-s);
+					}
+
+					strong {
+						font-weight: var(--txt-bold);
+					}
+				}
+
+				ul {
+					margin-bottom: var(--space-xs);
+					list-style: disc;
+					list-style-position: outside;
+					padding-left: var(--space-xs);
+
+					li {
+						margin-bottom: var(--space-xxs);
+					}
+				}
+			}
+		}
+	}
+}

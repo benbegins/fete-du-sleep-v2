@@ -1,0 +1,88 @@
+@use '../abstracts/variables';
+
+.card-consultation {
+	background: #fbf7f5;
+	border-radius: var(--rounded);
+	overflow: hidden;
+	box-shadow: var(--shadow);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	&__img-container {
+		position: relative;
+		width: 100%;
+		height: 0;
+		padding-bottom: 63%;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			transition: transform 5s ease-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+
+	&__content {
+		padding: var(--space-xs) var(--space-s);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media (--lg-n-above) {
+			padding: var(--space-s) var(--space-s) var(--space-xs);
+		}
+
+		&__title {
+			font-size: var(--fs-xl);
+			font-family: var(--font-hobeaux);
+			font-weight: var(--txt-black);
+			color: var(--sable);
+			line-height: 1.13;
+			margin-bottom: var(--space-xs);
+		}
+
+		&__btn {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: var(--space-xs);
+			border-top: 1px solid var(--dark-transparent);
+			padding-top: var(--space-xs);
+			font-weight: var(--txt-bold);
+			transition: color 0.25s ease;
+
+			@media (--lg-n-above) {
+				margin-top: var(--space-s);
+			}
+
+			&::after {
+				content: '';
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background: url('/src/images/icon-arrow-link-dark.svg') center
+					center no-repeat;
+				background-size: contain;
+				transition: transform 0.35s ease;
+			}
+
+			&:hover {
+				color: var(--sable);
+
+				&::after {
+					transform: translate(3px, 3px);
+				}
+			}
+		}
+	}
+}

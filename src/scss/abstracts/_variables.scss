@@ -1,0 +1,65 @@
+:root {
+	// Colors
+	--light: #f8efec;
+	--dark: #343539;
+	--sable: #cda595;
+	--green: #23a4a4;
+	--dark-transparent: rgba(60, 50, 45, 0.16);
+
+	// Spacing
+	--space-xxs: 0.5rem;
+	--space-xs: 1rem;
+	--space-s: 1.5rem;
+	--space-m: 2rem;
+	--space-l: 3rem;
+	--space-xl: 4.5rem;
+	--space-2xl: 6.5rem;
+	--space-3xl: clamp(4rem, calc(2.57rem + 7.14vw), 9rem);
+
+	// Font sizes
+	--fs-sm: 0.75rem;
+	--fs-base: 0.9375rem;
+	--fs-md: clamp(0.94rem, calc(0.9rem + 0.18vw), 1.06rem);
+	--fs-lg: clamp(1.25rem, calc(1.18rem + 0.36vw), 1.5rem);
+	--fs-highlight: clamp(1.75rem, calc(1.32rem + 2.14vw), 3.25rem);
+	--fs-xl: clamp(1.38rem, calc(1.27rem + 0.54vw), 1.75rem);
+	--fs-2xl: clamp(1.75rem, calc(1.39rem + 1.79vw), 3rem);
+	--fs-3xl: clamp(3.25rem, calc(2.32rem + 3.98vw), 6.5rem);
+	--fs-4xl: clamp(3.25rem, calc(1.9rem + 6.76vw), 9rem);
+
+	// Font weight
+	--txt-medium: 500;
+	--txt-semibold: 600;
+	--txt-bold: 700;
+	--txt-black: 900;
+
+	// Font family
+	--font-hobeaux: hobeaux, sans-serif;
+	--font-poppins: poppins, sans-serif;
+
+	// Sizes
+	--size-xxs: 240px;
+	--size-xs: 360px;
+	--size-sm: 480px;
+	--size-md: 768px;
+	--size-lg: 1024px;
+	--size-xl: 1440px;
+	--size-xxl: 1920px;
+
+	// Medias queries
+	@custom-media --sm-n-above (width >= 480px);
+	@custom-media --md-n-above (width >= 768px);
+	@custom-media --lg-n-above (width >= 1024px);
+	@custom-media --xl-n-above (width >= 1280px);
+	@custom-media --xxl-n-above (width >= 1440px);
+
+	// Ease
+	--ease: cubic-bezier(0.5, 0, 0.1, 1);
+
+	// Border radius
+	--rounded: clamp(1rem, calc(0.86rem + 0.71vw), 1.5rem);
+	--rounded-full: 9999px;
+
+	// Shadows
+	--shadow: 0 20px 40px var(--dark-transparent);
+}

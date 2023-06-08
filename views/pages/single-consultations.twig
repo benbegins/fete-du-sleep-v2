@@ -1,0 +1,39 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-single-consultations">
+		<section class="hero">
+			<div class="container">
+                <div class="left">
+                    <div class="img-container">
+                        <img src="{{ post.thumbnail.sizes['xl']['file'] }}"
+                        alt="{{post.title}}"
+                        srcset="{{ post.thumbnail.srcset }}"
+                        sizes="(max-width: 768px) 100vw, 50vw)"
+                        class="parallax" 
+                        data-speed="10" 
+                        loading="lazy"
+                        />
+                    </div>
+                </div>
+				<div class="right">
+                    <p class="page-subtitle text-reveal" translate>
+                        <a href="{{ function('get_term_link', types_consultation) }}">{{ types_consultation.name }}</a>
+                    </p>
+                    <h1 class="hero__title page-title small">
+                        <p class="text-reveal" translate>{{ post.title }}</p>
+                    </h1>
+                    <p class="prix text-reveal" translate>{{post.meta('prix')}} €</p>
+                    <div class="presentation text-reveal">
+                        {{ post.meta('presentation') }}
+                    </div>
+                    <a href="" class="btn-primary green">{{ __('Je prends rendez-vous', 'fetedusleep') }}</a>
+                </div>
+			</div>
+		</section>
+
+        {% include '/components/_etapes-consultations.twig' %}
+
+        <div class="temoignages_light{{ etapes_consultations ? ' margin-top' : ''}}">{% include '/components/_temoignages.twig' %}</div>
+	</div>
+{% endblock %}

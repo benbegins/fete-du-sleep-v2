@@ -1,0 +1,110 @@
+@use '../abstracts/variables';
+
+.page-mes-consultations {
+	.hero {
+		&__intro {
+			margin-top: var(--space-m);
+
+			@media (--lg-n-above) {
+				width: 50%;
+				margin-left: auto;
+				margin-top: var(--space-l);
+			}
+
+			p:first-child {
+				font-weight: var(--txt-bold);
+
+				@media (--lg-n-above) {
+					font-size: var(--fs-md);
+				}
+			}
+
+			p {
+				margin-bottom: var(--space-xs);
+			}
+		}
+	}
+
+	.categories {
+		padding-block: var(--space-3xl);
+
+		.list {
+			@media (--md-n-above) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: var(--space-s);
+			}
+			@media (--lg-n-above) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: var(--space-m);
+			}
+		}
+
+		.item {
+			a {
+				@media (--lg-n-above) {
+					&:hover {
+						img {
+							transform: scale(1.1);
+						}
+
+						.item-title::after {
+							transform: translate(3px, 3px);
+						}
+					}
+				}
+			}
+			&-title {
+				position: relative;
+				font-weight: var(--txt-black);
+				font-size: var(--fs-xl);
+				font-family: var(--font-hobeaux);
+				margin-bottom: var(--space-m);
+				line-height: 1.13;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				&::after {
+					content: '';
+					display: inline-block;
+					width: 14px;
+					height: 14px;
+					transition: transform 0.35s ease;
+					background: url('/src/images/icon-arrow-link-dark.svg')
+						center center no-repeat;
+					background-size: contain;
+
+					@media (--lg-n-above) {
+						width: 22px;
+						height: 22px;
+					}
+				}
+			}
+			.img-container {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding-bottom: 75%;
+				overflow: hidden;
+				border-radius: var(--rounded);
+				margin-bottom: 0.5rem;
+
+				@media (--lg-n-above) {
+					margin-bottom: var(--space-xs);
+					padding-bottom: 113%;
+				}
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transition: transform 5s ease-out;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+@use './variables';
+
+.container {
+	padding-inline: var(--space-s);
+
+	@media (--sm-n-above) {
+		padding-inline: var(--space-m);
+	}
+
+	@media (--lg-n-above) {
+		padding-inline: var(--space-l);
+	}
+}
+
+.mobile {
+	@media (--lg-n-above) {
+		display: none !important;
+	}
+}
+
+.desktop {
+	display: none !important;
+	@media (--lg-n-above) {
+		display: block !important;
+	}
+}
+
+.page-title {
+	font-size: var(--fs-3xl);
+	font-family: var(--font-hobeaux);
+	font-weight: var(--txt-black);
+	line-height: 1.07;
+
+	&.small {
+		font-size: var(--fs-2xl);
+	}
+}
+
+.page-subtitle {
+	font-weight: var(--txt-bold);
+	color: var(--sable);
+}

@@ -1,0 +1,31 @@
+@use '../abstracts/variables';
+
+.page-404 {
+	.hero {
+		padding-bottom: var(--space-3xl);
+
+		@media (--lg-n-above) {
+			min-height: calc(100vh - var(--space-3xl) - 80px);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-block: var(--space-2xl);
+		}
+
+		.container {
+			text-align: center;
+
+			@media (--lg-n-above) {
+				max-width: 50%;
+			}
+		}
+
+		&__title {
+			margin-bottom: var(--space-xs);
+		}
+
+		.btn-primary {
+			margin-top: var(--space-s);
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@use '../abstracts/variables';
+
+.rdv-indisponible {
+	margin-top: var(--space-m);
+
+	@media (--lg-n-above) {
+		max-width: 50%;
+		margin-inline: auto;
+	}
+
+	p > strong {
+		font-weight: var(--txt-bold);
+		font-size: var(--fs-md);
+	}
+
+	.cactus {
+		margin-bottom: var(--space-s);
+	}
+
+	.btn-primary {
+		margin-top: var(--space-s);
+	}
+}

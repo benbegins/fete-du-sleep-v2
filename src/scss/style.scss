@@ -16,6 +16,7 @@
 @use './components/ensavoirplus';
 @use './components/etapes-consultations';
 @use './components/form';
+@use './components/rdv-indisponible';
 
 // Pages
 @use './pages/home';
@@ -24,6 +25,9 @@
 @use './pages/single-consultations';
 @use './pages/quisuisje';
 @use './pages/contact';
+@use './pages/appel-decouverte';
+@use './pages/index';
+@use './pages/page-404';
 
 #wpadminbar {
 	display: none;

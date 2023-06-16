@@ -1,21 +1,12 @@
 @use '../abstracts/variables';
 
-.page-contact {
+.page-appel-decouverte {
 	.hero {
 		padding-bottom: var(--space-3xl);
 
 		.container {
 			@media (--lg-n-above) {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: var(--space-m);
-			}
-		}
-
-		.right {
-			@media (--lg-n-above) {
 				width: 75%;
-				margin-left: auto;
 			}
 		}
 
@@ -28,6 +19,7 @@
 
 			@media (--lg-n-above) {
 				margin-bottom: 0;
+				width: 66%;
 			}
 
 			p {
@@ -44,16 +36,41 @@
 
 			a {
 				text-decoration: underline;
-				transition: color 0.25s ease;
-
-				span {
-					text-decoration: underline;
-				}
 
 				&:hover {
 					color: var(--sable);
 				}
 			}
+		}
+
+		.biberon {
+			@media (--lg-n-above) {
+				position: absolute;
+				right: 0;
+				top: 30%;
+				width: 30%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: contain;
+					transform: translateX(20%);
+				}
+			}
+		}
+	}
+
+	.contact {
+		padding-bottom: var(--space-3xl);
+
+		.container {
+			text-align: center;
+		}
+
+		.page-title {
+			color: var(--sable);
+			margin-bottom: var(--space-xs);
 		}
 	}
 }

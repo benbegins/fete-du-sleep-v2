@@ -6,7 +6,6 @@ import SwupJsPlugin from '@swup/js-plugin'
 import Lenis from '@studio-freight/lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import axios from 'axios'
 
 // Components
 import intro from './components/intro.js'
@@ -16,6 +15,7 @@ import Buttons from './components/buttons.js'
 import Sliders from './components/sliders.js'
 import Parallax from './components/parallax.js'
 import TextReveal from './components/textreveal.js'
+import contact from './components/contact.js'
 
 // Global Vars
 let lenis, menu, buttons, sliders, parallax, textreveal
@@ -63,7 +63,10 @@ const init = () => {
 	}
 	requestAnimationFrame(raf)
 
-	if (document.querySelector('#main-container .page-contact')) {
+	if (
+		document.querySelector('#main-container .page-contact') ||
+		document.querySelector('#main-container .page-appel-decouverte')
+	) {
 		contact()
 	}
 }
@@ -91,17 +94,3 @@ swup.on('contentReplaced', init)
 
 // Unload on page change
 swup.on('willReplaceContent', unload)
-
-const contact = () => {
-	// const formContainer = document.querySelector('.contact-form__container')
-	// if (formContainer) {
-	// 	axios
-	// 		.post('/wp-admin/admin-ajax.php?action=get_contact_form')
-	// 		.then((response) => {
-	// 			formContainer.innerHTML = response.data
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error(error)
-	// 		})
-	// }
-}

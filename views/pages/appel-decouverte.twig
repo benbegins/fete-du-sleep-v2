@@ -1,0 +1,31 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-appel-decouverte">
+
+		<section class="hero">
+			<div class="container">
+				<div class="left">
+                    <h1 class="hero__title page-title">
+                        <p class="text-reveal" translate>{{ post.title }}</p>
+                    </h1>
+                    <div class="hero__content text-reveal">
+                        {{post.content}}
+                    </div>
+                </div>                
+			</div>
+            <div class="desktop biberon parallax" data-speed="-20">
+                <img src="{{ function('get_template_directory_uri') }}/src/images/biberon.png" alt="" />
+            </div>
+		</section>
+
+        <section class="contact">
+            <div class="container">
+                <h2 class="page-title small text-reveal" translate>{{ __('Je choisis ma date', 'fetedusleep') }}</h2>
+                {% include '/components/_rdv-indisponible.twig' %}
+            </div>
+        </section>
+
+
+	</div>
+{% endblock %}

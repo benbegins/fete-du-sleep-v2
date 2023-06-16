@@ -158,7 +158,8 @@
 
 			@media (--lg-n-above) {
 				border-color: var(--dark);
-				margin: 0 var(--space-l) 0 var(--space-xs);
+				// margin: 0 var(--space-l) 0 var(--space-xs);
+				margin: 0 0 0 var(--space-xs);
 			}
 		}
 

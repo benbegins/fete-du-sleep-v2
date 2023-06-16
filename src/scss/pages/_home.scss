@@ -45,27 +45,27 @@
 				}
 			}
 		}
+	}
 
-		.social {
-			@media (--lg-n-above) {
-				position: absolute;
-				left: var(--space-l);
-				bottom: 0;
+	.social {
+		@media (--lg-n-above) {
+			position: absolute;
+			left: var(--space-l);
+			bottom: var(--space-m);
 
-				ul {
-					display: flex;
-					gap: var(--space-xs);
-					align-items: center;
+			ul {
+				display: flex;
+				gap: var(--space-xs);
+				align-items: center;
 
-					svg {
+				svg {
+					path {
+						transition: fill 0.25s ease;
+					}
+
+					&:hover {
 						path {
-							transition: fill 0.25s ease;
-						}
-
-						&:hover {
-							path {
-								fill: var(--sable);
-							}
+							fill: var(--sable);
 						}
 					}
 				}

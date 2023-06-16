@@ -1,5 +1,8 @@
+@use '../abstracts/variables';
+
 .site-footer {
 	padding-block: var(--space-m);
+	border-top: 1px solid var(--dark);
 
 	@media (--lg-n-above) {
 		padding-block: calc(var(--space-xs) * 0.75);

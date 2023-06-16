@@ -1,0 +1,35 @@
+@use '../abstracts/variables';
+
+.page-index {
+	.hero {
+		margin-bottom: var(--space-l);
+		.container {
+			@media (--lg-n-above) {
+				width: calc(5 / 8 * 100%);
+				margin-inline: auto;
+			}
+		}
+	}
+
+	.main-content {
+		.container {
+			@media (--lg-n-above) {
+				width: calc(5 / 8 * 100%);
+				margin-inline: auto;
+			}
+		}
+		h2 {
+			font-size: var(--fs-md);
+			font-weight: var(--txt-bold);
+			margin-bottom: calc(var(--space-xs) / 2);
+			line-height: 1.13;
+		}
+		p {
+			margin-bottom: var(--space-s);
+
+			@media (--lg-n-above) {
+				margin-bottom: var(--space-m);
+			}
+		}
+	}
+}

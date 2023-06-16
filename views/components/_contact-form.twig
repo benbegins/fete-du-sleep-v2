@@ -1,0 +1,42 @@
+<div class="form">
+    <form id="contact-form" method="post">
+        <div class="row">
+            <label for="name">Votre prénom<sup>*</sup></label>
+            <input type="text" name="name" placeholder="Votre prénom" required>
+        </div>
+        <div class="row">
+            <label for="childname">Prénom(s) de(s) enfant(s)</label>
+            <input type="text" name="childname" placeholder="Prénom(s) de(s) enfant(s)">
+        </div>
+        <div class="row">
+            <label for="age">Tranche d'âge</label>
+            <div class="select-field">
+                <select name="age">
+                    <option value="Enceinte ou nouveau-né">Enceinte ou nouveau-né</option>
+                    <option value="4 à 18 mois">4 à 18 mois</option>
+                    <option value="18 mois à 5 ans">18 mois à 5 ans</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <label for="email">Votre email<sup>*</sup></label>
+            <input type="email" name="email" placeholder="Votre email" required>
+        </div>
+        <div class="row">
+            <label for="message">Votre message</label>
+            <textarea name="message" required placeholder="Bonjour Candice, j’ai une question à propos de…"></textarea>
+        </div>
+        <div class="row">
+            <div class="checkbox">
+                <input type="checkbox" name="consent" id="consent">
+                <label for="consent">J’autorise ce site à conserver mes données transmises via ce formulaire</label>
+            </div>
+        </div>
+        <div class="row piege">
+            <div class="checkbox">
+                <input type="checkbox" name="piege" id="piege">
+            </div>
+        </div>
+        <div class="row"><button type="submit" class="btn-primary green">Envoyer</button></div>
+    </form>
+</div>

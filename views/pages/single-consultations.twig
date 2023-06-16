@@ -27,7 +27,13 @@
                     <div class="presentation text-reveal">
                         {{ post.meta('presentation') }}
                     </div>
-                    <a href="" class="btn-primary green">{{ __('Je prends rendez-vous', 'fetedusleep') }}</a>
+                    {% set contact_page = function('get_page_by_path', 'contact') %}
+                    {% if contact_page %}
+                        {% set contact_post_id = function('pll_get_post', contact_page.ID) %}
+                        <a class="btn-primary green" href="{{ function('get_the_permalink', contact_post_id) }}">
+                            {{ __('Je prends rendez-vous', 'fetedusleep') }}
+                        </a>
+                    {% endif %}
                 </div>
 			</div>
 		</section>
@@ -35,5 +41,13 @@
         {% include '/components/_etapes-consultations.twig' %}
 
         <div class="temoignages_light{{ etapes_consultations ? ' margin-top' : ''}}">{% include '/components/_temoignages.twig' %}</div>
+
+
+        <section class="rdv">
+            <div class="container">
+                <h2 class="page-title small text-reveal" translate>{{ __('Je prends rendez-vous', 'fetedusleep') }}</h2>
+                {% include '/components/_rdv-indisponible.twig' %}
+            </div>
+        </section>
 	</div>
 {% endblock %}

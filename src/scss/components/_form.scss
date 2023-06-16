@@ -15,6 +15,7 @@
 		border: 1px solid var(--dark);
 		padding: calc(var(--space-xs) + 0.25rem) var(--space-s) var(--space-xs);
 		line-height: 1.25;
+		box-sizing: border-box;
 
 		&::placeholder {
 			opacity: 0.33;
@@ -45,7 +46,7 @@
 	input[type='checkbox'] {
 		appearance: none;
 		cursor: pointer;
-		margin-right: var(--space-xs);
+		// margin-right: var(--space-xs);
 		height: 16px;
 		width: 16px;
 		background: none;
@@ -58,15 +59,6 @@
 				no-repeat;
 			background-size: 9px 7px;
 		}
-	}
-
-	.forminator-error-message {
-		font-size: var(--fs-sm);
-		color: var(--error);
-	}
-
-	.forminator-checkbox__wrapper {
-		display: flex;
 	}
 
 	.select-field {
@@ -86,19 +78,37 @@
 		}
 	}
 
-	.forminator-row {
-		margin-bottom: var(--space-s) !important;
-	}
+	.checkbox {
+		display: flex;
 
-	.forminator-response-message.forminator-show {
-		margin-bottom: var(--space-m) !important;
-
-		&.forminator-error {
-			color: var(--error);
+		label {
+			font-size: var(--fs-base);
 		}
 
-		&.forminator-success {
-			color: var(--green);
+		input {
+			flex: 1 0 auto;
+			margin-right: var(--space-xs);
+		}
+	}
+
+	.row {
+		margin-bottom: var(--space-s);
+	}
+
+	.piege {
+		display: none;
+	}
+
+	.loading-message {
+		&.error {
+			color: var(--error);
+		}
+		&.success {
+			background: var(--green);
+			text-align: center;
+			padding: var(--space-xs);
+			border-radius: 12px;
+			color: var(--light);
 		}
 	}
 }

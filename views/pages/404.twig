@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-404">
+		<section class="hero">
+			<div class="container">
+                    <h1 class="hero__title page-title small">
+                        <p class="text-reveal" translate>{{ __('La page n\'a pas été trouvée', 'fetedusleep') }}</p>
+                    </h1>
+                    <p>{{ __('Malheureusement, la page à laquelle vous avez essayé d’accéder n’a pas pu être affichée.', 'fetedusleep') }}</p>
+                    <a href="{{site.url}}" class="btn-primary green">{{ __('Retour à l\'accueil', 'fetedusleep') }}</a>
+			</div>
+		</section>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<div class="rdv-indisponible">
+    <div class="cactus">
+        <img src="{{ function('get_template_directory_uri') }}/src/images/icon-cactus.svg" alt="">
+    </div>
+    <p>{{ __('Désolé ! <br>La prise de rendez-vous en ligne n’est pas disponible pour le moment.', 'fetedusleep') }}</p>
+    <p><strong>{{ __('Pour toute question ou pour fixer un rendez-vous, veuillez me contacter directement via la page de contact.', 'fetedusleep') }}</strong></p>
+    {% set contact_page = function('get_page_by_path', 'contact') %}
+    {% if contact_page %}
+        {% set contact_post_id = function('pll_get_post', contact_page.ID) %}
+        <a class="btn-primary green" href="{{ function('get_the_permalink', contact_post_id) }}">
+            {{ __('Contact', 'fetedusleep') }}
+        </a>
+    {% endif %}
+</div>

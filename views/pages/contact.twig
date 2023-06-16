@@ -13,8 +13,8 @@
                         {{post.content}}
                     </div>
                 </div>
-                <div class="right form">
-                    {{function('do_shortcode', post.meta('formulaire'))}}
+                <div class="right">
+                    {% include '/components/_contact-form.twig' %}
                 </div>
 			</div>
 		</section>

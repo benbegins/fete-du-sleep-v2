@@ -10,5 +10,11 @@ $context['temoignages'] = Timber::get_posts( array(
     'orderby' => 'rand',
 ) );
 
+$context['consultations'] = Timber::get_terms(array(
+    'taxonomy' => 'types-consultation',
+    'orderby' => 'ID',
+    'hide_empty' => false,
+));
+
 
 Timber::render( 'pages/index.twig', $context );

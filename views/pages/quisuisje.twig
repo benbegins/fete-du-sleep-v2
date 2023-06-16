@@ -1,0 +1,80 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-quisuisje">
+
+		<section class="hero">
+			<div class="container">
+				<h1 class="hero__title page-title">
+					<p class="text-reveal" translate>{{ post.title }}</p>
+				</h1>
+                <div class="img-container">
+                    {{thumbnail}}
+                </div>
+			</div>
+		</section>
+
+        <section class="introduction">
+            <div class="container">
+                <div class="introduction__content">
+                    <div class="text-reveal">{{post.meta('introduction')}}</div>
+                    {% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
+                    {% if consultations_page %}
+                        {% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
+                        <a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="desktop cubes parallax" data-speed="-15">
+                <img src="{{ function('get_template_directory_uri') }}/src/images/cubes.jpg" alt="" />
+            </div>
+        </section>
+
+        <section class="accroche">
+            <div class="container">
+                <h2 class="accroche__text text-reveal">
+                    {{post.meta('accroche')}}
+                </h2>
+            </div>
+        </section>
+
+        <section class="contenu-part-2">
+            <div class="container">
+                <div class="left">
+                    <div class="content">
+                        <div class="text-reveal">{{post.meta('contenu_part_2')}}</div>
+                        {% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
+						{% if consultations_page %}
+							{% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
+							<a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
+						{% endif %}
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="img-container">
+                        {% set image =
+                            function(
+                                'get_field',
+                                'portrait'
+                            )
+                        %}
+                        {% if image %}
+                            <img src="{{ image.sizes['large'] }}"
+                                alt="{{ type_consultation.title }}"
+                                srcset="{{ image.sizes['medium_large'] }} {{ image.sizes['medium-width'] }}w, {{
+                                image.sizes['large']
+                                }} {{ image.sizes['large-width'] }}w, {{ image.sizes['xl'] }} {{ image.sizes['xl-width'] }}w"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                class="parallax"
+                                data-speed="5" 
+                                loading="lazy" />
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include '/components/_ensavoirplus.twig' %}
+
+	</div>
+{% endblock %}

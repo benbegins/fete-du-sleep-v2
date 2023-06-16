@@ -80,3 +80,12 @@ function mytheme_timber_context( $context ) {
     $context['options'] = get_fields('option');
     return $context;
 }
+
+
+// Ajax display contact form
+// add_action('wp_ajax_get_contact_form', 'get_contact_form');
+// add_action('wp_ajax_nopriv_get_contact_form', 'get_contact_form');
+
+// function get_contact_form() {
+//     echo do_shortcode('[forminator_form id="89"]');
+// }

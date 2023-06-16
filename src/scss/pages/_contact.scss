@@ -1,0 +1,54 @@
+@use '../abstracts/variables';
+
+.page-contact {
+	.hero {
+		padding-bottom: var(--space-3xl);
+
+		.container {
+			@media (--lg-n-above) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: var(--space-m);
+			}
+		}
+
+		.right {
+			@media (--lg-n-above) {
+				width: 75%;
+				margin-left: auto;
+			}
+		}
+
+		&__title {
+			margin-bottom: var(--space-m);
+		}
+
+		&__content {
+			margin-bottom: var(--space-l);
+
+			@media (--lg-n-above) {
+				margin-bottom: 0;
+			}
+
+			p {
+				margin-bottom: var(--space-xs);
+
+				@media (--lg-n-above) {
+					margin-bottom: var(--space-s);
+				}
+
+				&:first-child {
+					font-weight: var(--txt-bold);
+				}
+			}
+
+			a {
+				text-decoration: underline;
+
+				&:hover {
+					color: var(--sable);
+				}
+			}
+		}
+	}
+}

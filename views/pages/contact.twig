@@ -1,0 +1,25 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-contact">
+
+		<section class="hero">
+			<div class="container">
+				<div class="left">
+                    <h1 class="hero__title page-title">
+                        <p class="text-reveal" translate>{{ post.title }}</p>
+                    </h1>
+                    <div class="hero__content text-reveal">
+                        {{post.content}}
+                    </div>
+                </div>
+                <div class="right form">
+                    {{function('do_shortcode', post.meta('formulaire'))}}
+                </div>
+			</div>
+		</section>
+
+        {% include '/components/_ensavoirplus.twig' %}
+
+	</div>
+{% endblock %}

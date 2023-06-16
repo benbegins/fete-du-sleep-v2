@@ -15,12 +15,15 @@
 @use './components/card-consultation';
 @use './components/ensavoirplus';
 @use './components/etapes-consultations';
+@use './components/form';
 
 // Pages
 @use './pages/home';
 @use './pages/mes-consultations';
 @use './pages/types-consultation';
 @use './pages/single-consultations';
+@use './pages/quisuisje';
+@use './pages/contact';
 
 #wpadminbar {
 	display: none;

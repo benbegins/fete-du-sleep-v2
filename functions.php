@@ -119,7 +119,7 @@ function get_contact_form() {
             // Envoie l'e-mail de notification
             $to = 'benoit.beghyn@gmail.com';
             $subject = 'Nouveau message depuis le site';
-            $body = "Nom : $name\n\nPrénom(s) de(s) enfant(s) : $childname\n\nEmail : $email\n\nAge : $age\n\nMessage : $message";
+            $body = "<strong>Nom :</strong> $name<br><strong>Prénom(s) de(s) enfant(s) :</strong> $childname<br><strong>Email :</strong> $email<br><strong>Age :</strong> $age<br><strong>Message :</strong> $message";
             $headers = array('Content-Type: text/html; charset=UTF-8');
 
             wp_mail( $to, $subject, $body, $headers );

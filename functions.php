@@ -117,7 +117,7 @@ function get_contact_form() {
 
         if ( $consent === 'Oui' ) {
             // Envoie l'e-mail de notification
-            $to = 'benoit.beghyn@email.com'; // Remplacez par votre adresse e-mail
+            $to = 'benoit.beghyn@email.com';
             $subject = 'Nouveau message depuis le site';
             $body = "Nom : $name\n\nPrénom(s) de(s) enfant(s) : $childname\n\nEmail : $email\n\nAge : $age\n\nMessage : $message";
             $headers = array('Content-Type: text/html; charset=UTF-8');
@@ -132,4 +132,20 @@ function get_contact_form() {
         }
     }
     
+}
+
+add_action( 'phpmailer_init', 'fix_my_email_return_path' );
+ 
+function fix_my_email_return_path( $phpmailer ) {
+    $phpmailer->Sender = $phpmailer->From;
+}
+
+add_filter( 'wp_mail_from', 'my_mail_from' );
+function my_mail_from( $email ) {
+return "contact@tommybonneau.com";
+}
+
+add_filter( 'wp_mail_from_name', 'my_mail_from_name' );
+function my_mail_from_name( $name ) {
+return "Tommy";
 }

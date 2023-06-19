@@ -16,6 +16,7 @@
 		padding: calc(var(--space-xs) + 0.25rem) var(--space-s) var(--space-xs);
 		line-height: 1.25;
 		box-sizing: border-box;
+		color: var(--dark);
 
 		&::placeholder {
 			opacity: 0.33;
@@ -86,7 +87,7 @@
 		}
 
 		input {
-			flex: 1 0 auto;
+			flex: 0 0 16px;
 			margin-right: var(--space-xs);
 		}
 	}

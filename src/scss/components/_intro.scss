@@ -1,33 +1,35 @@
-.intro {
-	position: fixed;
-	z-index: 200;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
+// Moved to head of base.twig
 
-.intro > path {
-	fill: var(--light);
-}
+// .intro {
+// 	position: fixed;
+// 	z-index: 200;
+// 	left: 0;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	pointer-events: none;
+// }
 
-.intro-overlay {
-	position: fixed;
-	z-index: 95;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--dark);
-	pointer-events: none;
-	opacity: 0.25;
-}
+// .intro > path {
+// 	fill: var(--light);
+// }
 
-.intro-icon {
-	position: fixed;
-	z-index: 201;
-	left: calc(50% - 29px);
-	top: calc(50% - 27px);
-	pointer-events: none;
-}
+// .intro-overlay {
+// 	position: fixed;
+// 	z-index: 95;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: var(--dark);
+// 	pointer-events: none;
+// 	opacity: 0.25;
+// }
+
+// .intro-icon {
+// 	position: fixed;
+// 	z-index: 201;
+// 	left: calc(50% - 29px);
+// 	top: calc(50% - 27px);
+// 	pointer-events: none;
+// }

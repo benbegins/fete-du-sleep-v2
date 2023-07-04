@@ -50,3 +50,9 @@ a {
 		display: inline-block;
 	}
 }
+
+p {
+	strong {
+		font-weight: var(--txt-bold);
+	}
+}

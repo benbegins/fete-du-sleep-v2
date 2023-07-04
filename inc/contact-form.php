@@ -33,7 +33,7 @@ function get_contact_form() {
 
         if ( $consent === 'Oui' ) {
             // Envoie l'e-mail de notification
-            $to = 'benoit.beghyn@gmail.com';
+            $to = 'contact@lafetedusleep.com';
             $subject = 'Nouveau message depuis le site';
             $body = "<strong>Nom :</strong> $name<br><strong>Prénom(s) de(s) enfant(s) :</strong> $childname<br><strong>Email :</strong> $email<br><strong>Age :</strong> $age<br><strong>Message :</strong> $message";
             $headers = array('Content-Type: text/html; charset=UTF-8');

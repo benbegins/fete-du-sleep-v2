@@ -3,6 +3,8 @@ import '../scss/style.scss'
 // Library Imports
 import Swup from 'swup'
 import SwupJsPlugin from '@swup/js-plugin'
+import SwupGaPlugin from '@swup/ga-plugin'
+import SwupPreloadPlugin from '@swup/preload-plugin'
 import Lenis from '@studio-freight/lenis'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -35,7 +37,13 @@ const options = [
 ]
 
 const swup = new Swup({
-	plugins: [new SwupJsPlugin(options)],
+	plugins: [
+		new SwupJsPlugin(options),
+		new SwupGaPlugin({
+			gaMeasurementId: 'G-CES6JSDG1Z',
+		}),
+		new SwupPreloadPlugin(),
+	],
 	containers: ['#main-container'],
 })
 

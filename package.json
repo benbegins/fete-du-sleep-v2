@@ -21,7 +21,9 @@
 	},
 	"dependencies": {
 		"@studio-freight/lenis": "^1.0.13",
+		"@swup/ga-plugin": "^1.1.0",
 		"@swup/js-plugin": "^2.0.0",
+		"@swup/preload-plugin": "^2.3.0",
 		"@swup/scripts-plugin": "^1.1.0",
 		"axios": "^1.4.0",
 		"gsap": "^3.11.5",

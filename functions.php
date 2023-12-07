@@ -1,6 +1,10 @@
 
 <?php
 
+require_once __DIR__ . '/vendor/autoload.php';
+
+$timber = new Timber\Timber();
+
 // Configure les fonctionnalités de bases
 function fetedusleep_theme_setup(){
 

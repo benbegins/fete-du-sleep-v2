@@ -6,7 +6,7 @@
 			<div class="container">
                 <div class="left">
                     <div class="img-container">
-                        <img src="{{ post.thumbnail.sizes['xl']['file'] }}"
+                        <img src="{{ post.thumbnail.sizes['large']['file'] }}"
                         alt="{{post.title}}"
                         srcset="{{ post.thumbnail.srcset }}"
                         sizes="(max-width: 768px) 100vw, 50vw)"
@@ -46,7 +46,45 @@
         <section class="rdv">
             <div class="container">
                 <h2 class="page-title small text-reveal" translate>{{ __('Je prends rendez-vous', 'fetedusleep') }}</h2>
-                {% include '/components/_rdv-indisponible.twig' %}
+
+                {% set service_number = post.meta('service_number') %}
+                {% if service_number %}
+                    <div id="simplybookme">
+                        <script>
+                            var widget = new SimplybookWidget({
+                            widget_type: 'iframe',
+                            url: 'https://lafetedusleep.simplybook.it',
+                            theme: 'space',
+                            theme_settings: {
+                                timeline_hide_unavailable: '1',
+                                sb_base_color: '#343539',
+                                hide_past_days: '0',
+                                timeline_show_end_time: '0',
+                                timeline_modern_display: 'as_slots',
+                                display_item_mode: 'block',
+                                sb_review_image: '',
+                                dark_font_color: '#343539',
+                                light_font_color: '#f8efec',
+                                sb_company_label_color: '#f8efec',
+                                hide_img_mode: '0',
+                                show_sidebar: '0',
+                                sb_busy: '#c6c0be',
+                                sb_available: '#23a4a4',
+                            },
+                            timeline: 'modern',
+                            datepicker: 'top_calendar',
+                            is_rtl: false,
+                            app_config: {
+                                clear_session: 0,
+                                allow_switch_to_ada: 0,
+                                predefined: { service: {{service_number}} },
+                            },
+                        })
+                        </script>
+                    </div>
+                {% else %}
+                    {% include '/components/_rdv-indisponible.twig' %}
+                {% endif %}
             </div>
         </section>
 	</div>

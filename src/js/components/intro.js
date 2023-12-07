@@ -18,7 +18,6 @@ export default function intro(init) {
 		attr: { d: start },
 		ease: 'power2.in',
 		duration: 0.5,
-		delay: 0.25,
 	})
 	tl.to(path, {
 		attr: { d: end },

@@ -2,7 +2,7 @@
     <header class="card-consultation__img-container">
         <a href="{{consultation.link}}">
             <img
-                src="{{ consultation.thumbnail.src }}"
+                src="{{ consultation.thumbnail.sizes.medium.file }}"
                 alt="{{ type_consultation.title }}"
                 srcset="{{consultation.thumbnail.srcset}}"
                 sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"

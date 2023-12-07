@@ -1,0 +1,106 @@
+{
+    "key": "group_64775ae21fda8",
+    "title": "Étapes de consultations",
+    "fields": [
+        {
+            "key": "field_64775ae24cbf5",
+            "label": "Etapes",
+            "name": "etapes",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Maximum 4",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 4,
+            "collapsed": "field_64775b604cbf6",
+            "button_label": "Ajouter une étape",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_64775b604cbf6",
+                    "label": "Titre",
+                    "name": "titre",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64775ae24cbf5"
+                },
+                {
+                    "key": "field_64775b6f4cbf7",
+                    "label": "Contenu",
+                    "name": "contenu",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 8,
+                    "placeholder": "",
+                    "new_lines": "",
+                    "parent_repeater": "field_64775ae24cbf5"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "etapes_consult"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1701953687
+}

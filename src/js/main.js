@@ -23,33 +23,34 @@ import contact from './components/contact.js'
 let lenis, menu, buttons, sliders, parallax, textreveal
 
 // Init Swup
-const options = [
-	{
-		from: '(.*)',
-		to: '(.*)',
-		in: (next, infos) => {
-			transitionIn(next)
-		},
-		out: (next, infos) => {
-			transitionOut(next)
-		},
-	},
-]
+// const options = [
+// 	{
+// 		from: '(.*)',
+// 		to: '(.*)',
+// 		in: (next, infos) => {
+// 			transitionIn(next)
+// 		},
+// 		out: (next, infos) => {
+// 			transitionOut(next)
+// 		},
+// 	},
+// ]
 
-const swup = new Swup({
-	plugins: [
-		new SwupJsPlugin(options),
-		new SwupGaPlugin({
-			gaMeasurementId: 'G-CES6JSDG1Z',
-		}),
-		new SwupPreloadPlugin(),
-	],
-	containers: ['#main-container'],
-})
+// const swup = new Swup({
+// 	plugins: [
+// 		new SwupJsPlugin(options),
+// 		new SwupGaPlugin({
+// 			gaMeasurementId: 'G-CES6JSDG1Z',
+// 		}),
+// 		new SwupPreloadPlugin(),
+// 	],
+// 	containers: ['#main-container'],
+// })
 
 // Play when visit page for the first time
 const once = () => {
 	intro(init)
+	// init()
 }
 
 // Play on every page load
@@ -71,10 +72,8 @@ const init = () => {
 	}
 	requestAnimationFrame(raf)
 
-	if (
-		document.querySelector('#main-container .page-contact') ||
-		document.querySelector('#main-container .page-appel-decouverte')
-	) {
+	// Contact Page
+	if (document.querySelector('#main-container .page-contact')) {
 		contact()
 	}
 }
@@ -98,7 +97,7 @@ if (document.readyState === 'complete') {
 }
 
 // Init on page change
-swup.on('contentReplaced', init)
+// swup.on('contentReplaced', init)
 
 // Unload on page change
-swup.on('willReplaceContent', unload)
+// swup.on('willReplaceContent', unload)

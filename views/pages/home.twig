@@ -100,9 +100,9 @@
                                         )
                                     %}
                                     {% if image %}
-                                        <img src="{{ image.sizes['large'] }}"
+                                        <img src="{{ image.sizes.medium_large }}"
                                             alt="{{ type_consultation.title }}"
-                                            srcset="{{ image.sizes['medium_large'] }} {{ image.sizes['medium-width'] }}w, {{
+                                            srcset="{{ image.sizes['medium'] }} {{ image.sizes['medium-width'] }}w, {{
                                             image.sizes['large']
                                             }} {{ image.sizes['large-width'] }}w, {{ image.sizes['xl'] }} {{ image.sizes['xl-width'] }}w"
                                             sizes="(max-width: 768px) 100vw, 33vw" 

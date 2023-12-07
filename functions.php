@@ -36,6 +36,15 @@ function fetedusleep_theme_register_assets(){
         true
     );
 
+    // Simplybookme
+    wp_enqueue_script( 
+        'simplybookme', 
+        'https://widget.simplybook.it/v2/widget/widget.js', 
+        array(),
+        '1.0',
+        false
+    );
+
 }
 add_action( 'wp_enqueue_scripts', 'fetedusleep_theme_register_assets');
 

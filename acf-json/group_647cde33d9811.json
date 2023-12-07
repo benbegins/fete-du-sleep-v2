@@ -1,0 +1,85 @@
+{
+    "key": "group_647cde33d9811",
+    "title": "Home",
+    "fields": [
+        {
+            "key": "field_647cde3445754",
+            "label": "Intro",
+            "name": "intro",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Moi, c’est Candice, je suis consultante en sommeil pour les bébés et enfants de 0 à 5 ans. L’idée, c’est de faire tout ça avec douceur et bienveillance  pour vous aider à mieux vivre le sommeil de votre baby.",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_647cde5e45755",
+            "label": "Accroche",
+            "name": "accroche",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Votre bébé met des heures à s’endormir ? Vous avez plusieurs réveils nocturnes ? Les siestes durent 30 minutes chrono ? Il ne s’endort qu’aux bras ? Ou se réveille très tôt ? Vous êtes au bon endroit !",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_647cde7545756",
+            "label": "Présentation",
+            "name": "presentation",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Le sommeil est primordial pour la santé et pour le développement de votre enfant, et aussi pour votre bien-être et disponibilité en tant que parent.\r\nPourtant, il fait partie des sujets les plus boudés et méconnus autour de la maternité. Le résultat, c’est qu’en tant que jeunes parents, on se retrouve perdus à errer à 4h du matin sur internet en quête de réponses. Et ça, c’est pas la fête.",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "10"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1701953696
+}

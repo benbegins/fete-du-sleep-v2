@@ -1,6 +1,10 @@
 {% extends 'base.twig' %}
 
 {% block body %}
+
+{% set service_number = post.meta('service_number') %}
+{% set contact_page = function('get_page_by_path', 'contact') %}
+
 	<div class="page-single-consultations">
 		<section class="hero">
 			<div class="container">
@@ -27,8 +31,12 @@
                     <div class="presentation text-reveal">
                         {{ post.meta('presentation') }}
                     </div>
-                    {% set contact_page = function('get_page_by_path', 'contact') %}
-                    {% if contact_page %}
+                    
+                    {% if service_number %}
+                        <a class="btn-primary green" href="#simplybookme">
+                            {{ __('Je prends rendez-vous', 'fetedusleep') }}
+                        </a>
+                    {% elseif contact_page %}
                         {% set contact_post_id = function('pll_get_post', contact_page.ID) %}
                         <a class="btn-primary green" href="{{ function('get_the_permalink', contact_post_id) }}">
                             {{ __('Je prends rendez-vous', 'fetedusleep') }}

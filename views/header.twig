@@ -137,6 +137,11 @@
 						</ul>
 					{% endif %}
 				</li>
+
+				<li>
+					<a href="https://www.amazon.fr/dp/2702927858" target="_blank">Mon livre</a>
+				</li>
+
 				<li>
 					{% set quisuisje_page = function('get_page_by_path', 'qui-suis-je') %}
 					{% if quisuisje_page %}
@@ -146,6 +151,7 @@
 						</a>
 					{% endif %}
 				</li>
+
 				<li>
 					{% set contact_page = function('get_page_by_path', 'contact') %}
 					{% if contact_page %}
@@ -165,14 +171,11 @@
 				</li>
 
 				<li>
-					{% set appeldecouverte_page = function('get_page_by_path', 'appel-de-decouverte') %}
-					{% if appeldecouverte_page %}
-						{% set appeldecouverte_post_id = function('pll_get_post', appeldecouverte_page.ID) %}
-						<a class="btn-primary appel"
-							href="{{ function('get_the_permalink', appeldecouverte_post_id) }}">
-							{{ __('Appel gratuit de 15 min', 'fetedusleep') }}
-						</a>
-					{% endif %}
+					<a class="btn-primary appel"
+						target="_blank"
+						href="https://fr.lafetedusleep.com/nl-du-sleep">
+						Newsletter
+					</a>
 				</li>
 
 				{# <li class="language-switcher">

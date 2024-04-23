@@ -137,6 +137,11 @@
 				&:after {
 					content: url('/src/images/icon-arrow-link-light.svg');
 					margin-left: var(--space-xs);
+
+					@media (--lg-n-above) {
+						content: '';
+						margin-left: 0;
+					}
 				}
 			}
 

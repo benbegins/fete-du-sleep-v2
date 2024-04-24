@@ -26,10 +26,15 @@
                             <a href="{{ function('get_term_link', types_consultation) }}">{{ types_consultation.name }}</a>
                         </p>
                     {% endif %}
+
                     <h1 class="hero__title page-title small">
                         <p class="text-reveal" translate>{{ post.title }}</p>
                     </h1>
-                    <p class="prix text-reveal" translate>{{post.meta('prix')}} €</p>
+
+                    {% if post.meta('prix') %}
+                        <p class="prix text-reveal" translate>{{post.meta('prix')}} €</p>
+                    {% endif %}
+                    
                     <div class="presentation text-reveal">
                         {{ post.meta('presentation') }}
                     </div>

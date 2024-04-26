@@ -14,14 +14,11 @@
 					<p class="text-reveal">
 						{{ post.meta('intro') }}
 					</p>
-					{% set appeldecouverte_page = function('get_page_by_path', 'appel-de-decouverte') %}
-					{% if appeldecouverte_page %}
-						{% set appeldecouverte_post_id = function('pll_get_post', appeldecouverte_page.ID) %}
-						<a class="btn-primary green"
-							href="{{ function('get_the_permalink', appeldecouverte_post_id) }}">
-							{{ __('Appel gratuit de 15 min', 'fetedusleep') }}
-						</a>
-					{% endif %}
+					{% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
+                    {% if consultations_page %}
+                        {% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
+                        <a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
+                    {% endif %}
 				</div>
 			</div>
 			
@@ -51,6 +48,7 @@
 				</ul>
 			</div>
 
+		{# Image principale #}
 		<section class="thumbnail">
 			<div class="img-container">
 				<img src="{{ post.thumbnail.sizes['xl']['file'] }}"
@@ -64,6 +62,7 @@
 			</div>
 		</section>
 
+		{# Présentation #}
 		<section class="presentation">
 			<div class="container">
 				<h2 class="presentation__accroche">
@@ -82,6 +81,16 @@
 			</div>
 		</section>
 
+
+		{# Livre #}
+		{# <section class="book">
+			<div class="container">
+				<h2 class="book__title">La fête du sleep, le livre</h2>
+			</div>
+		</section> #}
+
+
+		{# Mes consultations #}
 		<section class="categories">
             <div class="container">
 				<h2 class="categories__title text-reveal" translate>

@@ -138,10 +138,17 @@
 					{% endif %}
 				</li>
 
+				{# Secrets du sleep #}
+				<li>
+					<a href="https://fr.lafetedusleep.com/secrets-du-sleep-launch" target="_blank">Les secrets du Sleep</a>
+				</li>
+
+				{# Mon livre #}
 				<li>
 					<a href="https://www.amazon.fr/dp/2702927858" target="_blank">Mon livre</a>
 				</li>
 
+				{# Qui suis-je #}
 				<li>
 					{% set quisuisje_page = function('get_page_by_path', 'qui-suis-je') %}
 					{% if quisuisje_page %}
@@ -152,6 +159,7 @@
 					{% endif %}
 				</li>
 
+				{# Contact #}
 				<li>
 					{% set contact_page = function('get_page_by_path', 'contact') %}
 					{% if contact_page %}
@@ -170,6 +178,7 @@
 					<a href="{{ options.tiktok }}" target="_blank" rel="noopener noreferrer">Tiktok</a>
 				</li>
 
+				{# Newsletter #}
 				<li>
 					<a class="btn-primary appel"
 						target="_blank"

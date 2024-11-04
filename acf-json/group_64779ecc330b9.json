@@ -85,6 +85,22 @@
             "step": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_6728ac8658364",
+            "label": "Lien",
+            "name": "link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "S'il n'y a pas de numéro de service renseigné, ce lien sera affiché à la place.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -119,5 +135,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1701953765
+    "modified": 1730718920
 }

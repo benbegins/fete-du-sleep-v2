@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Components
 import intro from './components/intro.js'
-import { transitionIn, transitionOut } from './components/transition.js'
+import Transition from './components/transition.js'
 import Menu from './components/menu.js'
 import Buttons from './components/buttons.js'
 import Sliders from './components/sliders.js'
@@ -22,35 +22,9 @@ import contact from './components/contact.js'
 // Global Vars
 let lenis, menu, buttons, sliders, parallax, textreveal
 
-// Init Swup
-// const options = [
-// 	{
-// 		from: '(.*)',
-// 		to: '(.*)',
-// 		in: (next, infos) => {
-// 			transitionIn(next)
-// 		},
-// 		out: (next, infos) => {
-// 			transitionOut(next)
-// 		},
-// 	},
-// ]
-
-// const swup = new Swup({
-// 	plugins: [
-// 		new SwupJsPlugin(options),
-// 		new SwupGaPlugin({
-// 			gaMeasurementId: 'G-CES6JSDG1Z',
-// 		}),
-// 		new SwupPreloadPlugin(),
-// 	],
-// 	containers: ['#main-container'],
-// })
-
 // Play when visit page for the first time
 const once = () => {
 	intro(init)
-	// init()
 }
 
 // Play on every page load
@@ -64,6 +38,7 @@ const init = () => {
 	sliders = new Sliders('.slider')
 	parallax = new Parallax('.parallax')
 	textreveal = new TextReveal('.text-reveal')
+	new Transition()
 
 	// Lenis Scroll
 	function raf(time) {
@@ -78,15 +53,6 @@ const init = () => {
 	}
 }
 
-// Play on every page unload
-const unload = () => {
-	ScrollTrigger.killAll()
-	lenis.destroy()
-	menu.destroy()
-	buttons.destroy()
-	sliders.destroy()
-}
-
 // Init on page load
 if (document.readyState === 'complete') {
 	once()
@@ -95,9 +61,3 @@ if (document.readyState === 'complete') {
 		once()
 	})
 }
-
-// Init on page change
-// swup.on('contentReplaced', init)
-
-// Unload on page change
-// swup.on('willReplaceContent', unload)

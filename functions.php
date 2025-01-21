@@ -26,7 +26,7 @@ function fetedusleep_theme_register_assets(){
     // CSS
     wp_enqueue_style( 
         'style', 
-        get_template_directory_uri() . '/dist/main.css',
+        get_template_directory_uri() . '/dist/fete-du-sleep-v2.css',
         array(),
         '1.0'
     );
@@ -34,7 +34,7 @@ function fetedusleep_theme_register_assets(){
     // JS
     wp_enqueue_script( 
         'app', 
-        get_template_directory_uri() . '/dist/main.js', 
+        get_template_directory_uri() . '/dist/fete-du-sleep-v2.umd.js', 
         array(),
         '1.0',
         true

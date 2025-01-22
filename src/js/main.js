@@ -22,11 +22,6 @@ import contact from './components/contact.js'
 // Global Vars
 let lenis, menu, buttons, sliders, parallax, textreveal
 
-// Play when visit page for the first time
-const once = () => {
-	intro(init)
-}
-
 // Play on every page load
 const init = () => {
 	window.scrollTo(0, 0)
@@ -53,11 +48,4 @@ const init = () => {
 	}
 }
 
-// Init on page load
-if (document.readyState === 'complete') {
-	once()
-} else {
-	document.addEventListener('DOMContentLoaded', () => {
-		once()
-	})
-}
+intro(init)

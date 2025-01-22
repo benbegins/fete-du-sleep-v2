@@ -13,20 +13,18 @@ export default class Transition {
 				})
 			}
 		})
+
+		window.addEventListener('pageshow', this.init)
+	}
+
+	init() {
+		let path = document.querySelector('.transition .path')
+		const base = 'M 0 100 V 100 Q 50 100 100 100 V 100 z'
+		gsap.set(path, { attr: { d: base } })
+		gsap.set('.transition-overlay', { opacity: 0 })
 	}
 
 	transitionOut(event) {
-		// const bg = document.querySelector(".page-transition")
-		// gsap.to(bg, {
-		// 	opacity: 1,
-		// 	duration: 0.25,
-		// 	ease: "linear",
-		// 	onComplete: () => {
-		// 		const href = e.target.tagName === "IMG" ? e.target.parentElement.href : e.target.href
-		// 		window.location.href = href
-		// 	},
-		// })
-
 		let path = document.querySelector('.transition .path')
 
 		const base = 'M 0 100 V 100 Q 50 100 100 100 V 100 z'

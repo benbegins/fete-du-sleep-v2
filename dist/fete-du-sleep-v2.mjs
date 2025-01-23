@@ -3682,7 +3682,7 @@ const Sd = (n) => {
 class xd {
   constructor() {
     this.links = document.querySelectorAll("a"), this.links.forEach((e) => {
-      e.hostname === window.location.hostname && e.addEventListener("click", (t) => {
+      e.hostname === window.location.hostname && !e.hash && e.addEventListener("click", (t) => {
         t.preventDefault(), this.transitionOut(t);
       });
     }), window.addEventListener("pageshow", this.init);

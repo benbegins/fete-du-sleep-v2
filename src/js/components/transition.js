@@ -6,7 +6,7 @@ export default class Transition {
 
 		this.links.forEach((link) => {
 			// Check if link is internal
-			if (link.hostname === window.location.hostname) {
+			if (link.hostname === window.location.hostname && !link.hash) {
 				link.addEventListener('click', (e) => {
 					e.preventDefault()
 					this.transitionOut(e)

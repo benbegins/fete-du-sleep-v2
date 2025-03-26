@@ -4,12 +4,6 @@ $context = Timber::get_context();
 
 $context['post'] = new Timber\Post();
 
-// Term : Types de consultations
-$types_consultation = get_the_terms( $post->ID, 'types-consultation' );
-if($types_consultation){
-    $context['types_consultation'] = $types_consultation[0];
-}
-
 // Term : Etapes de la consultation
 $etapes = get_the_terms( $post->ID, 'etapes_consult' );
 if($etapes){

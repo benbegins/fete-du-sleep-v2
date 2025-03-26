@@ -17,40 +17,14 @@ function fetedusleep_theme_setup(){
     // Support pour ordonner les pages par attributs
     add_post_type_support( 'post', 'page-attributes' );
 
+    // Diable gutenberg
+    add_filter('use_block_editor_for_post', '__return_false', 10);
+
 }
 add_action( 'after_setup_theme', 'fetedusleep_theme_setup' );
 
 // Ajout des scripts
-function fetedusleep_theme_register_assets(){
-
-    // CSS
-    wp_enqueue_style( 
-        'style', 
-        get_template_directory_uri() . '/dist/fete-du-sleep-v2.css',
-        array(),
-        '1.0'
-    );
-
-    // JS
-    wp_enqueue_script( 
-        'app', 
-        get_template_directory_uri() . '/dist/fete-du-sleep-v2.umd.js', 
-        array(),
-        '1.0',
-        true
-    );
-
-    // Simplybookme
-    wp_enqueue_script( 
-        'simplybookme', 
-        'https://widget.simplybook.it/v2/widget/widget.js', 
-        array(),
-        '1.0',
-        false
-    );
-
-}
-add_action( 'wp_enqueue_scripts', 'fetedusleep_theme_register_assets');
+require get_template_directory() . '/inc/enqueue.php';
 
 
 // Custom image size

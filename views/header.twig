@@ -104,11 +104,11 @@
 					{% if services %}
 						<ul id="submenu" aria-expanded="false">
 							{% for service in services %}
-								<li>
+								<li class="item">
 									{{
 										service.meta('link') ?
 											'<a href="' ~ service.meta('link').url ~ '" target="_blank" rel="noopener noreferrer">' :
-											'<a href="' ~ service.permalink ~ '">'
+											'<a href="' ~ service.link ~ '">'
 									}}
 										<div class="img-container desktop">
 											{{ function('wp_get_attachment_image', service._thumbnail_id, 'medium_large') }}

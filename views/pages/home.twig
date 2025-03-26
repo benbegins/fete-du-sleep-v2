@@ -14,19 +14,10 @@
 					<p class="text-reveal">
 						{{ post.meta('intro') }}
 					</p>
-					{% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
-                    {% if consultations_page %}
-                        {% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
-                        <a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
-                    {% endif %}
+					<a href="#services" class="btn-primary green">{{ __('Voir mes services', 'fetedusleep') }}</a>
 				</div>
 			</div>
-			
 		</section>
-
-		<pre>
-			{{ dump(services) }}
-		</pre>
 
 		{# Services #}	
 
@@ -76,61 +67,22 @@
 				</h2>
 				<div class="presentation__content">
 					<div class="text-reveal">{{ post.meta('presentation') }}</div>
-					{# <div class="presentation__content__links">
-						{% set consultations_page = function('get_page_by_path', 'mes-consultations') %}
-						{% if consultations_page %}
-							{% set consultations_post_id = function('pll_get_post', consultations_page.ID) %}
-							<a href="{{ function('get_the_permalink', consultations_post_id) }}" class="btn-primary green">{{ __('Voir mes consultations', 'fetedusleep') }}</a>
-						{% endif %}
-					</div> #}
 				</div>
 			</div>
 		</section>
 
 
-		{# Livre #}
-		{# <section class="book">
-			<div class="container">
-				<h2 class="book__title">La fête du sleep, le livre</h2>
-			</div>
-		</section> #}
-
-
 		{# Mes consultations #}
-		<section class="categories">
+		<section class="categories" id="services">
             <div class="container">
 				<h2 class="categories__title text-reveal" translate>
-					{{ __('Mes consultations', 'fetedusleep') }}
+					{{ __('Mes services', 'fetedusleep') }}
 				</h2>
-                <ul class="list">
-                    {% for type_consultation in consultations %}
-                        <li class="item">
-                            <a href="{{ function('get_term_link', type_consultation.term_id) }}">
-                                <div class="img-container">
-                                    {% set image =
-                                        function(
-                                            'get_field',
-                                            'image',
-                                            'types-consultation_' ~ type_consultation.term_id
-                                        )
-                                    %}
-                                    {% if image %}
-                                        <img src="{{ image.sizes.medium_large }}"
-                                            alt="{{ type_consultation.title }}"
-                                            srcset="{{ image.sizes['medium'] }} {{ image.sizes['medium-width'] }}w, {{
-                                            image.sizes['large']
-                                            }} {{ image.sizes['large-width'] }}w, {{ image.sizes['xl'] }} {{ image.sizes['xl-width'] }}w"
-                                            sizes="(max-width: 768px) 100vw, 33vw" 
-                                            loading="lazy" />
-                                    {% endif %}
-                                </div>
-                                <p class="item-title">
-                                    {{ type_consultation.name }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
+				{% if services %}
+					<ul class="list">
+						{% include 'components/_services-list.twig' with {details: true} %}
+					</ul>
+				{% endif %}
             </div>
         </section>
 

@@ -18,35 +18,11 @@
 
         <section class="categories">
             <div class="container">
-                <ul class="list">
-                    {% for type_consultation in consultations %}
-                        <li class="item">
-                            <a href="{{ function('get_term_link', type_consultation.term_id) }}">
-                                <div class="img-container">
-                                    {% set image =
-                                        function(
-                                            'get_field',
-                                            'image',
-                                            'types-consultation_' ~ type_consultation.term_id
-                                        )
-                                    %}
-                                    {% if image %}
-                                        <img src="{{ image.sizes['large'] }}"
-                                            alt="{{ type_consultation.title }}"
-                                            srcset="{{ image.sizes['medium_large'] }} {{ image.sizes['medium-width'] }}w, {{
-                                            image.sizes['large']
-                                            }} {{ image.sizes['large-width'] }}w, {{ image.sizes['xl'] }} {{ image.sizes['xl-width'] }}w"
-                                            sizes="(max-width: 768px) 100vw, 33vw" 
-                                            loading="lazy" />
-                                    {% endif %}
-                                </div>
-                                <p class="item-title">
-                                    {{ type_consultation.name }}
-                                </p>
-                            </a>
-                        </li>
-                    {% endfor %}
-                </ul>
+                {% if services %}
+					<ul class="list">
+						{% include 'components/_services-list.twig' %}
+					</ul>
+				{% endif %}
             </div>
         </section>
 

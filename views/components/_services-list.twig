@@ -1,0 +1,20 @@
+{% for service in services %}
+    <li class="item">
+        {{
+            service.meta('link') ?
+                '<a href="' ~ service.meta('link').url ~ '" target="_blank" rel="noopener noreferrer">' :
+                '<a href="' ~ service.link ~ '">'
+        }}
+            <div class="img-container">
+                {{ function('wp_get_attachment_image', service._thumbnail_id, 'medium_large') }}
+            </div>
+            <p class="item-title">
+                {{ service.post_title }}
+            </p>
+            {% if details %}
+                <p class="item-price">{{ service.meta('prix') }} € <span>TTC</span></p>
+                <p class="item-description">{{ service.meta('resume') }}</p>
+            {% endif %}
+        </a>
+    </li>
+{% endfor %}

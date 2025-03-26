@@ -258,6 +258,10 @@
 				font-weight: var(--txt-medium);
 				opacity: 0.5;
 
+				&::after {
+					display: none;
+				}
+
 				@media (--lg-n-above) {
 					padding: 0;
 					opacity: 1;

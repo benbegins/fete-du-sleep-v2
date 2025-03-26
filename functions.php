@@ -3,7 +3,8 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$timber = new Timber\Timber();
+// Timber
+require get_template_directory() . '/inc/timber.php';
 
 // Configure les fonctionnalités de bases
 function fetedusleep_theme_setup(){
@@ -59,14 +60,6 @@ function post_remove (){
    remove_menu_page( 'edit-comments.php' );
 }
 add_action('admin_menu', 'post_remove'); 
-
-// Use options page for ACF
-add_filter( 'timber_context', 'mytheme_timber_context'  );
-
-function mytheme_timber_context( $context ) {
-    $context['options'] = get_fields('option');
-    return $context;
-}
 
 
 // Ajax display contact form

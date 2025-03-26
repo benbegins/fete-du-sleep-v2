@@ -88,7 +88,7 @@
 			<ul id="primary-navigation" aria-expanded="false">
 				<li>
 					<button aria-controls="submenu" aria-expanded="false" class="btn-submenu">
-						{{ __('Mes consultations', 'fetedusleep') }}
+						{{ __('Mes services', 'fetedusleep') }}
 						<svg class="icon-arrow"
 							xmlns="http://www.w3.org/2000/svg"
 							width="13.061"
@@ -101,47 +101,26 @@
 								stroke-width="1.5" />
 						</svg>
 					</button>
-					{% set types_consultation =
-						function(
-							'get_terms',
-							{
-								taxonomy: 'types-consultation',
-								hide_empty: false,
-								orderby: 'id'
-							}
-						)
-					%}
-					{% if types_consultation %}
+					{% if services %}
 						<ul id="submenu" aria-expanded="false">
-							{% for type_consultation in types_consultation %}
+							{% for service in services %}
 								<li>
-									<a href="{{ function('get_term_link', type_consultation.term_id) }}">
+									{{
+										service.meta('link') ?
+											'<a href="' ~ service.meta('link').url ~ '" target="_blank" rel="noopener noreferrer">' :
+											'<a href="' ~ service.permalink ~ '">'
+									}}
 										<div class="img-container desktop">
-											{% set image =
-												function(
-													'get_field',
-													'image',
-													'types-consultation_' ~ type_consultation.term_id
-												)
-											%}
-											{% if image %}
-												<img src="{{ image.sizes['medium_large'] }}"
-													alt="{{ type_consultation.name }}" loading="lazy" />
-											{% endif %}
+											{{ function('wp_get_attachment_image', service._thumbnail_id, 'medium_large') }}
 										</div>
 										<p class="item-title">
-											{{ type_consultation.name }}
+											{{ service.post_title }}
 										</p>
 									</a>
 								</li>
 							{% endfor %}
 						</ul>
 					{% endif %}
-				</li>
-
-				{# Secrets du sleep #}
-				<li>
-					<a href="https://fr.lafetedusleep.com/secrets-du-sleep" target="_blank">Les secrets du Sleep</a>
 				</li>
 
 				{# Mon livre #}
@@ -207,3 +186,4 @@
 	</div>
 </header>
 <div class="overlay-menu desktop"></div>
+

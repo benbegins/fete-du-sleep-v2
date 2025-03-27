@@ -1,0 +1,143 @@
+@use '../abstracts/variables';
+
+.page-ebooks-videos {
+	.hero {
+		text-align: center;
+
+		.container {
+			position: relative;
+			@media (--lg-n-above) {
+				padding-bottom: var(--space-3xl);
+			}
+		}
+		.content {
+			@media (--lg-n-above) {
+				width: 50%;
+				margin: 0 auto;
+				position: relative;
+			}
+		}
+		&__intro {
+			font-size: var(--fs-md);
+			text-wrap: balance;
+		}
+		.illu-baby {
+			width: 60%;
+			margin: var(--space-m) auto 0;
+			@media (--lg-n-above) {
+				width: 25%;
+				position: absolute;
+				bottom: 0;
+				left: var(--space-l);
+			}
+		}
+	}
+
+	.section-title {
+		position: relative;
+		font-family: var(--font-hobeaux);
+		font-size: var(--fs-2xl);
+		line-height: 1;
+		margin-bottom: var(--space-s);
+		padding-top: var(--space-m);
+
+		@media (--lg-n-above) {
+			margin-bottom: var(--space-l);
+		}
+
+		::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 1px;
+			background-color: var(--dark);
+			opacity: 0.4;
+		}
+
+		sup {
+			font-size: var(--fs-base);
+			font-family: var(--font-poppins);
+			vertical-align: top;
+		}
+	}
+
+	.cards-section {
+		padding-bottom: var(--space-3xl);
+
+		.list {
+			@media (--md-n-above) {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: var(--space-s);
+			}
+			@media (--lg-n-above) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: var(--space-m);
+			}
+		}
+
+		.item {
+			margin-bottom: var(--space-m);
+			@media (--lg-n-above) {
+				margin-bottom: 0;
+			}
+			a {
+				@media (--lg-n-above) {
+					&:hover {
+						img {
+							transform: scale(1.1);
+						}
+
+						.item-title::after {
+							transform: translate(3px, 3px);
+						}
+					}
+				}
+			}
+			&-title {
+				position: relative;
+				font-weight: var(--txt-black);
+				font-size: var(--fs-xl);
+				font-family: var(--font-hobeaux);
+				line-height: 1.13;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			&-price {
+				font-size: var(--fs-lg);
+				margin-bottom: var(--space-xxs);
+
+				span {
+					font-size: var(--fs-md);
+				}
+			}
+			.img-container {
+				position: relative;
+				width: 100%;
+				height: 0;
+				padding-bottom: 75%;
+				overflow: hidden;
+				border-radius: var(--rounded);
+				margin-bottom: var(--space-xs);
+
+				@media (--lg-n-above) {
+					// padding-bottom: 113%;
+				}
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					transition: transform 5s ease-out;
+				}
+			}
+		}
+	}
+}

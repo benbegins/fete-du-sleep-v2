@@ -1,0 +1,10 @@
+<a href="{{item.link.url}}" target="_blank" rel="noopener noreferrer">
+    <div class="img-container">
+        {{ function('wp_get_attachment_image', item.image, 'medium_large') }}
+    </div>
+    <p class="item-title">
+        {{ item.title }}
+    </p>
+    <p class="item-price">{{ item.price }} € <span>TTC</span></p>
+    <p class="item-description">{{ item.description }}</p>
+</a>

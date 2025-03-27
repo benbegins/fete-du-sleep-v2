@@ -1,0 +1,54 @@
+{% extends 'base.twig' %}
+
+{% block body %}
+	<div class="page-ebooks-videos">
+
+        {# Hero #}
+		<section class="hero">
+			<div class="container">
+				<div class="content">
+                    <h1 class="hero__title page-title">
+                        <p class="text-reveal" translate>{{ post.title }}</p>
+                    </h1>
+                                    <div class="hero__intro">
+                        <p class="text-reveal">
+                            {{ post.meta('presentation') }}
+                        </p>
+                    </div>
+                </div>
+                <img class="illu-baby" src="{{theme.uri}}/src/images/baby-fiesta.png" alt="Illustration bébé - La Fête du Sleep">
+			</div>
+		</section>
+
+
+        {# E-books #}
+        {% if post.meta('e-books') and post.meta('e-books')|length > 0 %}
+        <section class="ebooks cards-section">
+            <div class="container">
+                <h2 class="section-title">E-books <sup>({{ post.meta('e-books')|length }})</sup></h2>
+                <ul class="list">
+                    {% for item in post.meta('e-books') %}
+                        <li class="item">{% include 'components/_card-ebook-video.twig' %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+
+
+        {# Videos #}
+        {% if post.meta('videos') and post.meta('videos')|length > 0 %}
+        <section class="videos cards-section">
+            <div class="container">
+                <h2 class="section-title">Videos <sup>({{ post.meta('videos')|length }})</sup></h2>
+                <ul class="list">
+                    {% for item in post.meta('videos') %}
+                        <li class="item">{% include 'components/_card-ebook-video.twig' %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        {% endif %}
+
+    </div>
+{% endblock %}

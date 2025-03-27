@@ -10,11 +10,13 @@
                     <h1 class="hero__title page-title">
                         <p class="text-reveal" translate>{{ post.title }}</p>
                     </h1>
-                                    <div class="hero__intro">
-                        <p class="text-reveal">
-                            {{ post.meta('presentation') }}
-                        </p>
-                    </div>
+                    {% if post.meta('presentation') %}
+                        <div class="hero__intro">
+                            <p class="text-reveal">
+                                {{ post.meta('presentation') }}
+                            </p>
+                        </div>
+                    {% endif %}                    
                 </div>
                 <img class="illu-baby" src="{{theme.uri}}/src/images/baby-fiesta.png" alt="Illustration bébé - La Fête du Sleep">
 			</div>

@@ -123,32 +123,16 @@
 					{% endif %}
 				</li>
 
-				{# Mon livre #}
-				<li>
-					<a href="https://www.amazon.fr/dp/2702927858" target="_blank">Mon livre</a>
-				</li>
-
-				{# Qui suis-je #}
-				<li>
-					{% set quisuisje_page = function('get_page_by_path', 'qui-suis-je') %}
-					{% if quisuisje_page %}
-						{% set quisuisje_post_id = function('pll_get_post', quisuisje_page.ID) %}
-						<a href="{{ function('get_the_permalink', quisuisje_post_id) }}">
-							{{ __('Qui suis-je', 'fetedusleep') }}
-						</a>
-					{% endif %}
-				</li>
-
-				{# Contact #}
-				<li>
-					{% set contact_page = function('get_page_by_path', 'contact') %}
-					{% if contact_page %}
-						{% set contact_post_id = function('pll_get_post', contact_page.ID) %}
-						<a href="{{ function('get_the_permalink', contact_post_id) }}">
-							{{ __('Contact', 'fetedusleep') }}
-						</a>
-					{% endif %}
-				</li>
+				{# Menu #}
+				{% if mainMenu %}
+					{% for item in mainMenu.items %}
+						<li>
+							<a href="{{ item.url }}" target="{{ item.object == 'custom' ? '_blank' : '_self' }}">
+								{{ item.title }}
+							</a>
+						</li>
+					{% endfor %}
+				{% endif %}
 
 				<li class="mobile">
 					<a href="{{ options.instagram }}" target="_blank" rel="noopener noreferrer">Instagram</a>

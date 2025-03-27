@@ -24,8 +24,13 @@ function fetedusleep_theme_setup(){
 }
 add_action( 'after_setup_theme', 'fetedusleep_theme_setup' );
 
+
+// Ajout des menus
+require get_template_directory() . '/inc/menus.php';
+
 // Ajout des scripts
 require get_template_directory() . '/inc/enqueue.php';
+
 
 
 // Custom image size

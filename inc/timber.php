@@ -4,6 +4,7 @@ $timber = new Timber\Timber();
 
 function bemy_timber_context( $context ) {
     $context['options'] = get_fields('option');
+    $context['mainMenu'] = new \Timber\Menu('main-menu');
 
     // Get post type 'consultation'
     $context['services'] = Timber::get_posts(array(

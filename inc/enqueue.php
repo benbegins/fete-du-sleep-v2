@@ -25,7 +25,7 @@ function fetedusleep_theme_register_assets(){
         'https://widget.simplybook.it/v2/widget/widget.js', 
         array(),
         '1.0',
-        false
+        true
     );
 
 

@@ -19,6 +19,15 @@ function fetedusleep_theme_register_assets(){
         true
     );
 
+    // Simplybookme
+    wp_enqueue_script( 
+        'simplybookme', 
+        'https://widget.simplybook.it/v2/widget/widget.js', 
+        array(),
+        '1.0',
+        false
+    );
+
 
     // Remove gutenberg css
     wp_dequeue_style( 'wp-block-library' );
@@ -28,11 +37,6 @@ function fetedusleep_theme_register_assets(){
 
 }
 add_action( 'wp_enqueue_scripts', 'fetedusleep_theme_register_assets');
-
-function enqueue_simplybookme_script() {
-    echo '<script src="https://widget.simplybook.it/v2/widget/widget.js"></script>';
-}
-add_action('wp_head', 'enqueue_simplybookme_script');
 
 
 if ( ! function_exists( 'bemy_disable_emoji_feature' ) ) {

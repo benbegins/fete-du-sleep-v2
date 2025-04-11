@@ -101,20 +101,22 @@
 								stroke-width="1.5" />
 						</svg>
 					</button>
-					{% if services %}
+					{% if options.services %}
 						<ul id="submenu" aria-expanded="false">
-							{% for service in services %}
+							{% for item in options.services %}
+								{% set externalLink = fn('get_field', 'link', item.service.ID) %}
+								{% set permalink = fn('get_permalink', item.service.ID) %}
 								<li class="item">
 									{{
-										service.meta('link') ?
-											'<a href="' ~ service.meta('link').url ~ '" target="_blank" rel="noopener noreferrer">' :
-											'<a href="' ~ service.link ~ '">'
+										externalLink ?
+											'<a href="' ~ externalLink.url ~ '" target="_blank" rel="noopener noreferrer">' :
+											'<a href="' ~ permalink ~ '">'
 									}}
 										<div class="img-container desktop">
-											{{ function('wp_get_attachment_image', service._thumbnail_id, 'medium_large') }}
+											{{ function('wp_get_attachment_image', item.service._thumbnail_id, 'medium_large') }}
 										</div>
 										<p class="item-title">
-											{{ service.post_title }}
+											{{ item.service.post_title }}
 										</p>
 									</a>
 								</li>
@@ -170,4 +172,3 @@
 	</div>
 </header>
 <div class="overlay-menu desktop"></div>
-

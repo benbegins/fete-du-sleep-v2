@@ -54,6 +54,9 @@
 		</style>
 
 		{{ function('wp_head') }}
+
+		{% block head %}
+		{% endblock %}
 	</head>
 
 	<body class="{{ body_class }}">

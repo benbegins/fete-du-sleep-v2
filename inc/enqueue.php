@@ -19,15 +19,6 @@ function fetedusleep_theme_register_assets(){
         true
     );
 
-    // Simplybookme
-    wp_enqueue_script( 
-        'simplybookme', 
-        'https://widget.simplybook.it/v2/widget/widget.js', 
-        array(),
-        '1.0',
-        true
-    );
-
 
     // Remove gutenberg css
     wp_dequeue_style( 'wp-block-library' );

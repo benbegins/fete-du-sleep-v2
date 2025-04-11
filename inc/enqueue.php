@@ -20,13 +20,13 @@ function fetedusleep_theme_register_assets(){
     );
 
     // Simplybookme
-    wp_enqueue_script( 
-        'simplybookme', 
-        'https://widget.simplybook.it/v2/widget/widget.js', 
-        array(),
-        '1.0',
-        false
-    );
+    // wp_enqueue_script( 
+    //     'simplybookme', 
+    //     'https://widget.simplybook.it/v2/widget/widget.js', 
+    //     array(),
+    //     '1.0',
+    //     false
+    // );
 
 
     // Remove gutenberg css

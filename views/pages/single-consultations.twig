@@ -64,7 +64,7 @@
                     {% set service_number = post.meta('service_number') %}
                     {% if service_number %}
                         <div id="simplybookme">
-                            <script>
+                            {# <script>
                                 document.addEventListener('DOMContentLoaded', function () {
                                     if (typeof SimplybookWidget !== 'undefined') {
                                         var widget = new SimplybookWidget({
@@ -100,7 +100,7 @@
                                         console.error('SimplybookWidget is not defined. Make sure the widget.js script is loaded.');
                                     }
                                 });
-                            </script>
+                            </script> #}
                         </div>
                     {% else %}
                         {% include '/components/_rdv-indisponible.twig' %}

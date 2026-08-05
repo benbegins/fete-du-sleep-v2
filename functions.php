@@ -69,3 +69,6 @@ add_action('admin_menu', 'post_remove');
 
 // Ajax display contact form
 require get_template_directory() . '/inc/contact-form.php';
+
+// Add utils.php
+require get_template_directory() . '/inc/utils.php';

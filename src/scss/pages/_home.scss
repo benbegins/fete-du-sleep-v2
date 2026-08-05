@@ -106,6 +106,8 @@
 	}
 
 	.presentation {
+		padding-bottom: var(--space-3xl);
+
 		&__accroche {
 			color: var(--sable);
 			font-size: var(--fs-highlight);
@@ -143,7 +145,7 @@
 	}
 
 	.categories {
-		padding-block: var(--space-3xl);
+		padding-bottom: var(--space-3xl);
 
 		&__title {
 			font-size: var(--fs-2xl);

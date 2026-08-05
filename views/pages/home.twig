@@ -14,7 +14,7 @@
 					<p class="text-reveal">
 						{{ post.meta('intro') }}
 					</p>
-					<a href="#services" class="btn-primary green">{{ __('Voir mes services', 'fetedusleep') }}</a>
+					<a href="#services" class="btn-primary green">{{ __('Je veux dormir !', 'fetedusleep') }}</a>
 				</div>
 			</div>
 		</section>
@@ -58,6 +58,11 @@
 			</div>
 		</section>
 
+		
+		{% set section_items = post.meta('flexible_section_1') %}
+		{% include 'components/_flexible-section.twig' %}
+				
+
 		{# Présentation #}
 		<section class="presentation">
 			<div class="container">
@@ -69,6 +74,10 @@
 				</div>
 			</div>
 		</section>
+
+
+		{% set section_items = post.meta('flexible_section_2') %}
+		{% include 'components/_flexible-section.twig' %}
 
 
 		{# Mes consultations #}
@@ -85,7 +94,10 @@
             </div>
         </section>
 
+		{% set section_items = post.meta('flexible_section_3') %}
+		{% include 'components/_flexible-section.twig' %}
+
 	</div>
 
-	{% include 'components/_temoignages.twig' %}
+	{# {% include 'components/_temoignages.twig' %} #}
 {% endblock %}

@@ -1,0 +1,30 @@
+{% if section_items %}
+    {% for item in section_items %}
+        {% if item.acf_fc_layout == '1_col' %}
+            <section class="pb-section">
+                <div class="container">	
+                    <div class="wysiwyg">{{ item.content }}</div>
+                </div>
+            </section>
+        {% elseif item.acf_fc_layout == '2_col' %}
+            <section class="pb-section">
+                <div class="container">	
+                    <div class="grid-cols-2">
+                        <div class="wysiwyg">{{ item.content_1 }}</div>
+                        <div class="wysiwyg">{{ item.content_2 }}</div>
+                    </div>
+                </div>
+            </section>
+        {% elseif item.acf_fc_layout == '3_col' %}
+            <section class="pb-section">
+                <div class="container">	
+                    <div class="grid-cols-3">
+                        <div class="wysiwyg">{{ item.content_1 }}</div>
+                        <div class="wysiwyg">{{ item.content_2 }}</div>
+                        <div class="wysiwyg">{{ item.content_3 }}</div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+{% endif %}

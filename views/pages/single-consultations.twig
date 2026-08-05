@@ -30,10 +30,6 @@
                         <p class="prix text-reveal" translate>{{post.meta('prix')}} € TTC</p>
                     {% endif %}
                     
-                    <div class="presentation text-reveal">
-                        {{ post.meta('presentation') }}
-                    </div>
-                    
                     {% if service_number %}
                         <a class="btn-primary green" href="#simplybookme">
                             {{ __('Je prends rendez-vous', 'fetedusleep') }}
@@ -48,13 +44,23 @@
                             {{ __('Je prends rendez-vous', 'fetedusleep') }}
                         </a>
                     {% endif %}
+
+                    <div class="presentation text-reveal">
+                        {{ post.meta('presentation') }}
+                    </div>
+                    
+                    
                 </div>
 			</div>
 		</section>
 
         {% include '/components/_etapes-consultations.twig' %}
+        
+        <div class="pb-section"></div>
+        {% set section_items = post.meta('flexible_section_1') %}
+		{% include 'components/_flexible-section.twig' %}
 
-        <div class="temoignages_light{{ etapes_consultations ? ' margin-top' : ''}}">{% include '/components/_temoignages.twig' %}</div>
+        {# <div class="temoignages_light{{ etapes_consultations ? ' margin-top' : ''}}">{% include '/components/_temoignages.twig' %}</div> #}
 
         {% if not link %}
             <section class="rdv">
@@ -103,6 +109,9 @@
                 </div>
             </section>
         {% endif %}
+
+        {% set section_items = post.meta('flexible_section_2') %}
+		{% include 'components/_flexible-section.twig' %}
         
         
 	</div>

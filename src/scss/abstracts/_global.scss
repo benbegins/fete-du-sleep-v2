@@ -142,6 +142,13 @@ p {
 	}
 }
 
+.w-50p {
+	@media (--lg-n-above) {
+		width: 50%;
+		margin: 0 auto;
+	}
+}
+
 // INTRO
 
 .intro {

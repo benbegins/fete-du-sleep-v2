@@ -3,7 +3,9 @@
         {% if item.acf_fc_layout == '1_col' %}
             <section class="pb-section">
                 <div class="container">	
-                    <div class="wysiwyg">{{ item.content }}</div>
+                    <div class="w-50p">
+                        <div class="wysiwyg">{{ item.content }}</div>
+                    </div>
                 </div>
             </section>
         {% elseif item.acf_fc_layout == '2_col' %}

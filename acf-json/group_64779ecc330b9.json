@@ -29,7 +29,7 @@
             "label": "Résumé",
             "name": "resume",
             "aria-label": "",
-            "type": "textarea",
+            "type": "wysiwyg",
             "instructions": "S'affiche sur les pages de liste de services.",
             "required": 0,
             "conditional_logic": 0,
@@ -39,10 +39,11 @@
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
-            "rows": 4,
-            "placeholder": "",
-            "new_lines": ""
+            "allow_in_bindings": 0,
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_64779eccde821",
@@ -490,5 +491,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1785962031
+    "modified": 1786044792
 }

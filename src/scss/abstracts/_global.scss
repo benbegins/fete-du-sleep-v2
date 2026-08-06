@@ -120,14 +120,6 @@ p {
 .grid-cols-3 {
 	display: grid;
 	gap: var(--space-m);
-
-	@media (--md-n-above) {
-		gap: var(--space-l);
-	}
-
-	@media (--lg-n-above) {
-		gap: var(--space-2xl);
-	}
 }
 
 .grid-cols-2 {

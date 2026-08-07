@@ -14,7 +14,11 @@
 			line-height: 1.13;
 
 			@media (--lg-n-above) {
-				width: 75%;
+				width: 80%;
+				font-size: var(--fs-3xl);
+			}
+			@media (--xl-n-above) {
+				width: 70%;
 				font-size: var(--fs-3xl);
 			}
 

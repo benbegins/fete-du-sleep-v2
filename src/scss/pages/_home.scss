@@ -8,13 +8,14 @@
 		&__title {
 			position: relative;
 			font-family: var(--font-hobeaux);
-			font-size: var(--fs-3xl);
+			font-size: 2.5rem;
 			font-weight: var(--txt-black);
 			margin-bottom: var(--space-s);
 			line-height: 1.13;
 
-			@media (--xl-n-above) {
+			@media (--lg-n-above) {
 				width: 75%;
+				font-size: var(--fs-3xl);
 			}
 
 			.img-container {
@@ -110,20 +111,23 @@
 
 		&__accroche {
 			color: var(--sable);
-			font-size: var(--fs-highlight);
+			font-size: var(--fs-xl);
 			line-height: 1.13;
 			font-weight: var(--txt-semibold);
-			margin-bottom: var(--space-3xl);
+			margin-bottom: var(--space-s);
+			text-align: center;
 
-			@media (--md-n-above) {
-				margin-bottom: var(--space-l);
+			// @media (--md-n-above) {
+			// 	margin-bottom: var(--space-l);
+			// }
+
+			@media (--lg-n-above) {
+				width: 75%;
+				margin-inline: auto;
 			}
 		}
 		&__content {
-			@media (--lg-n-above) {
-				width: 50%;
-				// margin-left: auto;
-			}
+			text-align: center;
 
 			p:not(:last-child) {
 				margin-bottom: var(--space-xs);
